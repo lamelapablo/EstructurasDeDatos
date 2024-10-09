@@ -19,12 +19,12 @@ class Grafo:
             raise AccessToNonExistingNode(f"{s} or {t} are not in P")
 
         while OPEN:
-            (z, y) = OPEN.popleft()
+            (z, y) = OPEN.popleft() [(1,3), (4,2), (5, 7)] [1,4,5]
             CLOSED.append((z, y))
         
             if t in self.R(z):
-                CLOSED.append((t,z))
-                print(f"Se ha alcanzado el nodo objetivo {t}")
+                CLOSED.append((t,z)) 
+                print(f"Se ha alcanzado el nodo objetivo {t}") 
                 camino = self.get_path(CLOSED, t)
                 return camino
             
@@ -60,7 +60,6 @@ class Grafo:
         
         return camino
 
-        
 
 def read_json_file(file):
     with open(file, "r") as file:
